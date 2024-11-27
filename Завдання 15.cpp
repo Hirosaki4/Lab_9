@@ -3,24 +3,24 @@
 using namespace std;
 
 struct Fraction {
-    int numerator;   
-    int denominator; 
+    int numerator;   // Чисельник дробу
+    int denominator;// Знаменник дробу 
 };
 
 Fraction simplify(Fraction f) {
-    int a = f.numerator;
-    int b = f.denominator;
+    int a = f.numerator; // Копіюємо чисельник
+    int b = f.denominator; // Копіюємо знаменник
     while (a != b) {
         if (a > b) {
-            a = a - b;
+            a = a - b; // Якщо чисельник більший, віднімаємо знаменник
         }
         else {
-            b = b - a;
+            b = b - a; // Якщо знаменник більший, віднімаємо чисельник
         }
     }
-    f.numerator = f.numerator / a;
-    f.denominator = f.denominator / a;
-    return f;
+    f.numerator = f.numerator / a; // Ділимо чисельник на НСД
+    f.denominator = f.denominator / a; // Ділимо знаменник на НСД
+    return f; // Повертаємо спрощений дріб
 }
 
 Fraction add(Fraction f1, Fraction f2) {
